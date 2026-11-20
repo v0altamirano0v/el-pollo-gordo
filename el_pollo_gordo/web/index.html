@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Pollo Gordo - Gestión de Ventas</title>
+  <meta name="theme-color" content="#B71C1C">
+  <script src="flutter.js" defer></script>
+  <style>
+    body { margin: 0; background: #FAFAF7; }
+    #flutter_target { width: 100%; height: 100vh; }
+    #loading { font-family: sans-serif; text-align: center; padding-top: 40vh; color: #B71C1C; }
+  </style>
+</head>
+<body>
+  <div id="loading">Cargando El Pollo Gordo...</div>
+  <div id="flutter_target"></div>
+  <script>
+    window.addEventListener('load', function (ev) {
+      var loading = document.querySelector('#loading');
+      _flutter.loader.load({
+        targetElementId: 'flutter_target',
+        onEntrypointLoaded: async function (engineInitializer) {
+          const appRunner = await engineInitializer.initializeEngine();
+          await appRunner.runApp();
+          if (loading) loading.remove();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
