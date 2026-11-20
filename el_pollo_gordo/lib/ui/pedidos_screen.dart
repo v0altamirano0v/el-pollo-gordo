@@ -233,7 +233,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
               child: ListTile(
                 leading: const Icon(Icons.check_circle, color: Colors.green),
                 title: Text('Último pedido: $_ultimoNumero'),
-                subtitle: const Text('Disponible en Despacho y Caja')),
+                subtitle: const Text('Disponible en Despacho y Caja'),
               ),
             ),
         ],
